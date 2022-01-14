@@ -1,6 +1,5 @@
-# drf-api
+# drf-api-permissions-postgres
 
 ## Recent PR:
-https://github.com/MFierro25/drf-api/compare/docker?expand=1
-# drf-api-permissions-postgres
-# drf-api-permissions-postgres
+
+
