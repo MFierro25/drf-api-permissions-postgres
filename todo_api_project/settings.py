@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#b-&+9b9lpsp9k5yhdgj4(k2=tk34-)1dctfjj!hy78gl8+x5i
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '0.0.0.0',
+    '0.0.0.0', '127.0.0.1'
 ]
 
 
@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'todo_api_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgressql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
@@ -132,6 +136,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
     ]
 }
